@@ -1,10 +1,8 @@
 var express = require("express");
+var UserController = require("../controllers/userController");
 
 var router = express();
 
-router.get("/", (req, res, next) => {
-    var users = [];
-    return res.json({ users: users });
-});
+router.get("/", UserController.getAllUsers);
 
 module.exports = router;
